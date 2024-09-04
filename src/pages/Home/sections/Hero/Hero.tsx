@@ -4,6 +4,7 @@ import DownloadIcon from "@mui/icons-material/Download";
 import EmailIcon from "@mui/icons-material/Email";
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
+import TypingText from "./TypingText";
 
 const Hero = () => {
   const StyledHero = styled("div")(({ theme }) => ({
@@ -42,22 +43,24 @@ const Hero = () => {
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} md={7}>
+            <Grid item xs={12} md={7} display="flex" flexDirection="column" alignItems="center">
               <Typography
                 color="primary.contrastText"
                 variant="h1"
                 textAlign="center"
                 pb={2}
+                sx={{
+                  fontSize: {
+                    xs: "3rem",
+                    md: "5rem",
+                  },
+                }}
               >
                 Johnattan de Oliveira e Silva
               </Typography>
-              <Typography
-                color="primary.contrastText"
-                variant="h2"
-                textAlign="center"
-              >
-                Photographer, Filmmaker & Visual Storyteller
-              </Typography>
+              <Box width="100%" textAlign="center">
+                <TypingText />
+              </Box>
               <Grid
                 container
                 display="flex"
@@ -72,7 +75,7 @@ const Hero = () => {
                   display="flex"
                   justifyContent="center"
                 >
-                  <StyledButton>
+                  <StyledButton onClick={() => console.log("Download")}>
                     <DownloadIcon />
                     <Typography>Download CV</Typography>
                   </StyledButton>
@@ -84,7 +87,7 @@ const Hero = () => {
                   display="flex"
                   justifyContent="center"
                 >
-                  <StyledButton>
+                  <StyledButton onClick={() => console.log("contact")}>
                     <EmailIcon />
                     <Typography> Contact me</Typography>
                   </StyledButton>
