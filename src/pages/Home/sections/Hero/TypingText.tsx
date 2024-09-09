@@ -2,36 +2,53 @@ import { useState, useEffect } from "react";
 import { Typography } from "@mui/material";
 import "./styles/typingText.css"; 
 
-const words = ["Photographer", "Filmmaker", "Visual Storyteller"];
+interface TypingTextProps {
+  delay: number;
+}
 
-const TypingText = () => {
+const TypingText: React.FC<TypingTextProps> = ({ delay }) => {
+
+  const words = ["Photographer", "Filmmaker", "Visual Storyteller"];
+
   const [currentWord, setCurrentWord] = useState(0);
   const [currentChar, setCurrentChar] = useState(0);
+  const [startTyping, setStartTyping] = useState(false);
+
 
   useEffect(() => {
-    const typingInterval = setInterval(() => {
-      setCurrentChar((prevChar) => {
-        if (prevChar < words[currentWord].length) {
-          return prevChar + 1;
-        } else {
-          return prevChar;
-        }
-      });
-    }, 150); // Ajuste a velocidade da digitação aqui
+    const typingStartTimeout = setTimeout(() => {
+      setStartTyping(true); 
+    }, delay);
 
-    return () => clearInterval(typingInterval);
-  }, [currentWord]);
+    return () => clearTimeout(typingStartTimeout);
+  }, [delay]);
 
   useEffect(() => {
-    if (currentChar === words[currentWord].length) {
+    if (startTyping) {
+      const typingInterval = setInterval(() => {
+        setCurrentChar((prevChar) => {
+          if (prevChar < words[currentWord].length) {
+            return prevChar + 1;
+          } else {
+            return prevChar;
+          }
+        });
+      }, 125);
+
+      return () => clearInterval(typingInterval);
+    }
+  }, [currentWord, startTyping]);
+
+  useEffect(() => {
+    if (currentChar === words[currentWord].length && startTyping) {
       const switchWordInterval = setInterval(() => {
         setCurrentWord((prevWord) => (prevWord + 1) % words.length);
-        setCurrentChar(0); 
-      }, 3000); 
+        setCurrentChar(0);
+      }, 3000);
 
       return () => clearInterval(switchWordInterval);
     }
-  }, [currentChar]);
+  }, [currentChar, startTyping]);
 
 
   return (

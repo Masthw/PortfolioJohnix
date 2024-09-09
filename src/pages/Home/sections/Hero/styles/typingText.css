@@ -10,9 +10,9 @@
   overflow: hidden;
   border-right: 0.1em solid white;
   white-space: nowrap;
-  animation: typing 4s steps(30, end) 1s 1 normal both, blink-caret .75s step-end infinite;
+  animation: typing 4s steps(18, end), 0.5s both, blink-caret .75s step-end infinite;
   font-size: inherit;
-  box-sizing: border-box;
+  
 }
 
 @keyframes typing {
