@@ -4,7 +4,7 @@ const About = () => {
 
     const StyledAbout = styled("div")(({ theme }) => ({
         backgroundColor: theme.palette.primary.contrastText,
-        height: "40vh",
+        height: "50vh",
         display: "flex",
         alignItems: "center",
         [theme.breakpoints.up("xs")]: {
@@ -27,6 +27,10 @@ const About = () => {
           About Me
         </Typography>
         <Typography variant="body1" color="textPrimary" sx={{ mt: 2 }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+          lacinia odio vitae vestibulum. Donec et venenatis dolor. Integer
+          imperdiet, purus vel ultricies auctor, augue lacus elementum elit, et
+          cursus lacus leo at purus.
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
           lacinia odio vitae vestibulum. Donec et venenatis dolor. Integer
           imperdiet, purus vel ultricies auctor, augue lacus elementum elit, et
