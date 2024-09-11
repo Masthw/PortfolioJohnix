@@ -5,11 +5,14 @@ import EmailIcon from "@mui/icons-material/Email";
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
 import TypingText from "./TypingText";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./styles/animations.css";
 
 
 const Hero = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const heroRef = useRef(null);
+
   const StyledHero = styled("div")(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
     height: "100vh",
@@ -32,17 +35,32 @@ const Hero = () => {
     willChange: "opacity, transform"
   }));
 
-  const [loading, setLoading] = useState(true);
+   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setIsVisible(true); // Ativa a animação quando o Hero entra na viewport
+          observer.disconnect(); // Desconecta após ativar para evitar re-execuções
+        }
+      },
+      {
+        threshold: 0.2, // Define o quão visível o Hero deve estar para ativar
+      }
+    );
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => {
+      if (heroRef.current) observer.unobserve(heroRef.current);
+    };
   }, []);
 
   return (
     <>
-      <StyledHero>
+      <StyledHero ref={heroRef}>
         <Container maxWidth="lg">
           <Grid container spacing={2}>
             <Grid item xs={12} md={5}>
@@ -51,10 +69,8 @@ const Hero = () => {
                   <AnimatedBackground />
                 </Box>
                 <Box position="relative" textAlign="center">
-                {!loading && ( 
-        
+                {isVisible && ( 
                     <StyledImg src={Avatar} className="slide-left" />
-                  
                   )}
                 </Box>
               </Box>
@@ -67,7 +83,7 @@ const Hero = () => {
               flexDirection="column"
               alignItems="center"
             >
-              {!loading && (
+              {isVisible && (
             <div className="slide-right"> 
                 <Typography
                   color="primary.contrastText"
