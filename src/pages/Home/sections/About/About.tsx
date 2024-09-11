@@ -1,8 +1,13 @@
 import { Container, Typography, Box, styled, Grid } from "@mui/material";
 import InfoBox from "./InfoBox";
 import SchoolIcon from "@mui/icons-material/School";
+import { useEffect, useRef, useState } from "react";
+import "./styles/animationsAbout.css";
 
 const About = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const aboutRef = useRef(null);
+
   const StyledAbout = styled("div")(({ theme }) => ({
     backgroundColor: theme.palette.primary.contrastText,
     minHeight: "50vh",
@@ -17,9 +22,31 @@ const About = () => {
     },
   }));
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+    return () => {
+      if (aboutRef.current) observer.unobserve(aboutRef.current);
+    };
+  }, []);
+
   return (
     <>
-      <StyledAbout>
+      <StyledAbout ref={aboutRef}>
         <Container maxWidth="lg">
           <Box sx={{ textAlign: "center" }}>
             <Typography variant="h2" color="primary" gutterBottom>
@@ -31,6 +58,7 @@ const About = () => {
                   icon={SchoolIcon}
                   title="Education"
                   description={"1+ years Front-end Development"}
+                  animationClass={isVisible ? "slide-left" : ""}
                 />
               </Grid>
               <Grid item xs={12} md={6}>
@@ -38,6 +66,7 @@ const About = () => {
                   icon={SchoolIcon}
                   title="Education"
                   description="Bachelor's Degree in Electrical Engineering"
+                  animationClass={isVisible ? "slide-right" : ""}
                 />
               </Grid>
             </Grid>

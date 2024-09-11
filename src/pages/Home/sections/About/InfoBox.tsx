@@ -1,14 +1,22 @@
-import { Box, Typography, Icon, SvgIconProps } from "@mui/material";
+import { Box, Typography, SvgIconProps } from "@mui/material";
+
 
 interface InfoBoxProps {
-    icon: React.ElementType<SvgIconProps>; 
-    title: string;
-    description: string;
-  }
+  icon: React.ElementType<SvgIconProps>;
+  title: string;
+  description: string;
+  animationClass?: string;
+}
 
-const InfoBox: React.FC<InfoBoxProps> = ({ icon: IconComponent, title, description }) => {
+const InfoBox: React.FC<InfoBoxProps> = ({
+  icon: IconComponent,
+  title,
+  description,
+  animationClass = "",
+}) => {
   return (
     <Box
+      className={animationClass}
       display="flex"
       flexDirection="column"
       alignItems="center"
