@@ -1,4 +1,4 @@
-import { Container, Typography, Box, styled, Grid } from "@mui/material";
+import { Container, Typography, Box, styled, Grid, Divider } from "@mui/material";
 import InfoBox from "./InfoBox";
 import SchoolIcon from "@mui/icons-material/School";
 import { useEffect, useRef, useState } from "react";
@@ -81,6 +81,7 @@ const About = () => {
               ultricies auctor, augue lacus elementum elit, et cursus lacus leo
               at purus.
             </Typography>
+            <Divider sx={{ my: 8, height: 1.5, backgroundColor: 'primary.main' }} />
           </Box>
         </Container>
       </StyledAbout>
