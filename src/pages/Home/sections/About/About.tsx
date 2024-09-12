@@ -14,11 +14,10 @@ const About = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    padding: theme.spacing(4, 2),
+    padding: theme.spacing(4, 1),
     [theme.breakpoints.up("md")]: {
       // >mobile
-      paddingTop: 0,
-      padding: theme.spacing(8, 4),
+      padding: theme.spacing(2, 2)
     },
   }));
 
@@ -71,7 +70,7 @@ const About = () => {
                 />
               </Grid>
             </Grid>
-            <Typography variant="body1" color="textPrimary" sx={{ mt: 2 }}>
+            <Typography variant="body1" color="textPrimary" sx={{ mt: 10 }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
               lacinia odio vitae vestibulum. Donec et venenatis dolor. Integer
               imperdiet, purus vel ultricies auctor, augue lacus elementum elit,
@@ -81,7 +80,7 @@ const About = () => {
               ultricies auctor, augue lacus elementum elit, et cursus lacus leo
               at purus.
             </Typography>
-            <Divider sx={{ my: 8, height: 1.5, backgroundColor: 'primary.main' }} />
+            <Divider sx={{ marginTop: 5, height: 1.5, backgroundColor: 'primary.main' }} />
           </Box>
         </Container>
       </StyledAbout>
