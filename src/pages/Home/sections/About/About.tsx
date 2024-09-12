@@ -32,7 +32,8 @@ const About = () => {
         }
       },
       {
-        threshold: 0.2,
+        root: null,
+        threshold: 0.5,
       }
     );
 

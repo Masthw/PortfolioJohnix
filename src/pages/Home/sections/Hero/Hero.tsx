@@ -40,12 +40,12 @@ const Hero = () => {
       (entries) => {
         const [entry] = entries;
         if (entry.isIntersecting) {
-          setIsVisible(true); // Ativa a animação quando o Hero entra na viewport
-          observer.disconnect(); // Desconecta após ativar para evitar re-execuções
+          setIsVisible(true);
+          observer.disconnect(); 
         }
       },
       {
-        threshold: 0.2, // Define o quão visível o Hero deve estar para ativar
+        threshold: 0.2, 
       }
     );
 
