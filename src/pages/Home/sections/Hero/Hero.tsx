@@ -129,7 +129,7 @@ const Hero = () => {
                     display="flex"
                     justifyContent="center"
                   >
-                    <StyledButton onClick={() => console.log("contact")}>
+                    <StyledButton onClick={() => (window.location.href = "mailto:maverick17xd@gmail.com")}>
                       <EmailIcon />
                       <Typography> Contact me</Typography>
                     </StyledButton>
