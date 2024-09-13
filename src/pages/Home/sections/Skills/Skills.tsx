@@ -64,7 +64,7 @@ const Skills = () => {
           <Typography variant="h2" color="primary" gutterBottom>
             Skills
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={4} marginBottom={3}>
             <Grid item xs={12} md={4}>
               <SkillCard
                 title="JavaScript"
