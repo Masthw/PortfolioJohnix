@@ -43,7 +43,7 @@ const Skills = () => {
 
     const observer = new IntersectionObserver(observerCallback, {
       root: null,
-      threshold: 0.5, // Só dispara a animação quando 50% da skill estiver visível
+      threshold: 0.5,
     });
 
     if (javascriptRef.current) observer.observe(javascriptRef.current);

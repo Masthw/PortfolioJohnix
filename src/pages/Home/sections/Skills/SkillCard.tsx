@@ -18,7 +18,7 @@ const growAndShrink = keyframes`
   }
 `;
 
-// Usando forwardRef para permitir o uso de ref externa
+
 const SkillCard = forwardRef<HTMLDivElement, SkillCardProps>(
   ({ title, delay = 0, animationClass = "" }, ref) => (
     <Box
