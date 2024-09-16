@@ -32,8 +32,10 @@ const NavBar = () => {
 
   const handleScroll = (sectionId: string) => {
     const section = document.getElementById(sectionId);
+    const navbarHeight = document.querySelector('header')?.offsetHeight || 0;
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const position = section.offsetTop - navbarHeight;
+    window.scrollTo({ top: position, behavior: "smooth" });
     }
     if (drawerOpen) {
       setDrawerOpen(false);
