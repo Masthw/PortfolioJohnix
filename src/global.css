@@ -1,3 +1,24 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  scrollbar-width: thin; 
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent; 
 }
+
+::-webkit-scrollbar {
+    width: 8px; 
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px; 
+    opacity: 0; 
+    transition: opacity 0.2s ease; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    opacity: 1; 
+  }
