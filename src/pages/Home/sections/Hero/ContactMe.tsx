@@ -37,7 +37,10 @@ const ContactMe = () => {
             sx={{
               animationDelay: "0s",
              color: theme.palette.primary.contrastText,
-              borderRadius: "50%", 
+              borderRadius: "50%",
+              '&:hover' : {
+            backgroundColor: theme.palette.secondary.light
+        },
             }}
           >
             <IconButton color="inherit">
@@ -53,8 +56,10 @@ const ContactMe = () => {
             sx={{
               animationDelay: "0.2s",
               color: theme.palette.primary.contrastText,
-
               borderRadius: "50%",
+              '&:hover' : {
+            backgroundColor: theme.palette.secondary.light
+        },
             }}
           >
             <IconButton color="inherit">
@@ -71,6 +76,9 @@ const ContactMe = () => {
               animationDelay: "0.4s",
               color: theme.palette.primary.contrastText,
               borderRadius: "50%",
+              '&:hover' : {
+            backgroundColor: theme.palette.secondary.light
+        },
             }}
           >
             <IconButton color="inherit">
