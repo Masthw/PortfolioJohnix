@@ -21,9 +21,11 @@
   }
   
   .slide-left {
-    animation: slideInLeft 0.8s ease-out forwards;
+    animation: slideInLeft 1.2s ease-out forwards;
+    opacity: 0;
   }
   
   .slide-right {
-    animation: slideInRight 0.8s ease-out forwards;
+    animation: slideInRight 1.2s ease-out forwards;
+    opacity: 0;
   }

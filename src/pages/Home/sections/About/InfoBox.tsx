@@ -26,7 +26,8 @@ const InfoBox: React.FC<InfoBoxProps> = ({
         boxShadow="0 4px 8px rgba(0,0,0,0.1)"
         sx={{
           backgroundColor: "background.paper",
-          transition: "background-color 0.3s ease",
+          transition: "background-color 0.3s ease-out",
+          opacity: 0,
           "&:hover": {
             backgroundColor: theme.palette.secondary.light,
           },
