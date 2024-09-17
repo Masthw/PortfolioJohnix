@@ -20,7 +20,7 @@ const Skills = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    padding: theme.spacing(1, 2),
+    padding: theme.spacing(4, 2),
     [theme.breakpoints.up("md")]: {
       padding: theme.spacing(1, 2),
     },
