@@ -1,0 +1,31 @@
+@keyframes popIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+img {
+    opacity: 0;
+    transform: scale(0.3);
+}
+
+.popIn {
+  animation: popIn 1.2s ease-out forwards;
+}
+
+.project-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.project-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.project-delay-3 {
+  animation-delay: 0.6s;
+}
