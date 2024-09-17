@@ -1,12 +1,12 @@
 import { Box, Container, Grid, styled, Typography } from "@mui/material";
 import Avatar from "../../../../assets/images/avatar.jpg";
 import DownloadIcon from "@mui/icons-material/Download";
-import EmailIcon from "@mui/icons-material/Email";
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
 import TypingText from "./TypingText";
 import { useEffect, useState, useRef } from "react";
 import "./styles/animations.css";
+import ContactMe from "./ContactMe";
 
 
 const Hero = () => {
@@ -129,10 +129,7 @@ const Hero = () => {
                     display="flex"
                     justifyContent="center"
                   >
-                    <StyledButton onClick={() => (window.location.href = "mailto:maverick17xd@gmail.com")}>
-                      <EmailIcon />
-                      <Typography> Contact me</Typography>
-                    </StyledButton>
+                    <ContactMe />
                   </Grid>
                 </Grid>
                 </div>

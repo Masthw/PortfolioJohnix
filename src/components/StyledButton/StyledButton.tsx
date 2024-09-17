@@ -1,9 +1,9 @@
 import { styled } from "@mui/material";
-import { ReactNode } from "react";
+import { ReactNode, MouseEvent } from "react";
 
 interface StyledButtonProps {
     children: ReactNode
-    onClick: () => void
+    onClick: (event: MouseEvent<HTMLButtonElement>) => void
 }
 
 const StyledButton: React.FC<StyledButtonProps> = ({children, onClick}) => {
