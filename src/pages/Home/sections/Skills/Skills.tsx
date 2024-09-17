@@ -68,7 +68,7 @@ const Skills = () => {
             <Grid item xs={12} md={4}>
               <SkillCard
                 title="JavaScript"
-                delay={0.1}
+                delay={0.2}
                 ref={javascriptRef}
                 animationClass={isVisible.javascript ? "grow-animation" : ""}
               />
@@ -76,7 +76,7 @@ const Skills = () => {
             <Grid item xs={12} md={4}>
               <SkillCard
                 title="React"
-                delay={0.3}
+                delay={0.4}
                 ref={reactRef}
                 animationClass={isVisible.react ? "grow-animation" : ""}
               />
@@ -84,7 +84,7 @@ const Skills = () => {
             <Grid item xs={12} md={4}>
               <SkillCard
                 title="Flutter"
-                delay={0.5}
+                delay={0.6}
                 ref={flutterRef}
                 animationClass={isVisible.flutter ? "grow-animation" : ""}
               />

@@ -11,10 +11,12 @@ interface SkillCardProps {
 
 const growAndShrink = keyframes`
   0% {
-    transform: scale(0.5);
+    transform: scale(0.0);
+    opacity: 0;
   }
   100% {
     transform: scale(1);
+    opacity: 1;
   }
 `;
 
@@ -32,8 +34,8 @@ const SkillCard = forwardRef<HTMLDivElement, SkillCardProps>(
       boxShadow="0 4px 8px rgba(0,0,0,0.1)"
       sx={{
         backgroundColor: "background.paper",
-        animation: `${growAndShrink} 0.8s ease ${delay}s forwards`,
-        transform: "scale(0.5)",
+        animation: `${growAndShrink} 1.2s ease-out ${delay}s forwards`,
+        transform: "scale(0.0)",
         transition: "background-color 0.3s ease",
         "&:hover": {
           backgroundColor: theme.palette.secondary.light,
