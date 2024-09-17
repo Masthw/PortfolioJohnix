@@ -52,7 +52,7 @@ const Footer = () => {
       </Box>
 
       <Typography variant="body2" sx={{ marginTop: "8px" }}>
-      &copy; {new Date().getFullYear()} Todos os direitos reservados 
+      &copy; 2024 Todos os direitos reservados 
       </Typography>
     </Box>
   );
