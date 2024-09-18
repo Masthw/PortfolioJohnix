@@ -10,7 +10,7 @@ const About = () => {
 
   const StyledAbout = styled("div")(({ theme }) => ({
     backgroundColor: theme.palette.primary.contrastText,
-    minHeight: "50vh",
+    minHeight: "60vh",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -32,7 +32,7 @@ const About = () => {
       },
       {
         root: null,
-        threshold: 0.5,
+        threshold: 0.9,
       }
     );
 

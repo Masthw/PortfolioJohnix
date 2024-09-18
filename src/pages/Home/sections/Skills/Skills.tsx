@@ -16,7 +16,7 @@ const Skills = () => {
 
   const StyledSkills = styled("div")(({ theme }) => ({
     backgroundColor: theme.palette.background.default,
-    minHeight: "30vh",
+    minHeight: "40vh",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -43,7 +43,7 @@ const Skills = () => {
 
     const observer = new IntersectionObserver(observerCallback, {
       root: null,
-      threshold: 0.5,
+      threshold: 0.9,
     });
 
     if (javascriptRef.current) observer.observe(javascriptRef.current);

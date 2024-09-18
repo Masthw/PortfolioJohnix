@@ -34,8 +34,9 @@ const SkillCard = forwardRef<HTMLDivElement, SkillCardProps>(
       boxShadow="0 4px 8px rgba(0,0,0,0.1)"
       sx={{
         backgroundColor: "background.paper",
-        animation: `${growAndShrink} 1.2s ease-out ${delay}s forwards`,
+        animation: animationClass ? `${growAndShrink} 1.2s ease-out ${delay}s forwards` : 'none',
         transform: "scale(0.0)",
+        opacity: 0,
         transition: "background-color 0.3s ease",
         "&:hover": {
           backgroundColor: theme.palette.secondary.light,
