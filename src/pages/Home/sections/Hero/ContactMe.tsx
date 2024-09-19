@@ -49,7 +49,7 @@ const ContactMe = () => {
           </Link>
 
           <Link
-            href="https://linkedin.com/in/seu-usuario"
+            href="https://www.linkedin.com/in/johnattan-de-oliveira-e-silva-a6b22628b/"
             target="_blank"
             color="inherit"
             className="bounce-icon"
