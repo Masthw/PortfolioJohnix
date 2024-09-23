@@ -78,7 +78,7 @@ const Projects = () => {
               <img
                 src={Avatar}
                 alt="Project 2"
-                className={isVisible.project2 ? "popIn project-delay-2" : ""}
+                className={isVisible.project1 ? "popIn project-delay-2" : ""}
                 style={{ width: "100%", borderRadius: "8px" }}
               />
               </div>
@@ -88,7 +88,7 @@ const Projects = () => {
               <img
                 src={Avatar}
                 alt="Project 3"
-                className={isVisible.project3 ? "popIn project-delay-3" : ""}
+                className={isVisible.project1 ? "popIn project-delay-3" : ""}
                 style={{ width: "100%", borderRadius: "8px" }}
               />
               </div>
