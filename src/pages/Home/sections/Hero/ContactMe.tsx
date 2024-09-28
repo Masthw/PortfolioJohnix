@@ -3,6 +3,7 @@ import { IconButton, Typography, Box, Link, useTheme } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import YouTubeIcon from '@mui/icons-material/YouTube';
 import StyledButton from "../../../../components/StyledButton/StyledButton"; 
 import "./styles/animations.css"; 
 
@@ -19,7 +20,7 @@ const ContactMe = () => {
       {!showIcons ? (
         <StyledButton onClick={handleClick}>
           <EmailIcon />
-          <Typography sx={{ marginLeft: 1 }}>Contact me</Typography>
+          <Typography sx={{ marginLeft: 1 }}>Contato</Typography>
         </StyledButton>
       ) : (
         <Box
@@ -31,7 +32,7 @@ const ContactMe = () => {
           }}
         >
           <Link
-            href="mailto:maverick17xd@gmail.com"
+            href="mailto:silvajohnattan@gmail.com"
             color="inherit"
             className="bounce-icon"
             sx={{
@@ -68,7 +69,7 @@ const ContactMe = () => {
           </Link>
 
           <Link
-            href="https://www.instagram.com/jdoes.galeria?igsh=ZGUyZXUzbzUzcWpo"
+            href="https://www.instagram.com/johnatttttttttttttttttttttttan/"
             target="_blank"
             color="inherit"
             className="bounce-icon"
@@ -83,6 +84,24 @@ const ContactMe = () => {
           >
             <IconButton color="inherit">
               <InstagramIcon />
+            </IconButton>
+          </Link>
+          <Link
+            href="https://www.youtube.com/@johnatttttttttttttttttttttttan"
+            target="_blank"
+            color="inherit"
+            className="bounce-icon"
+            sx={{
+              animationDelay: "0.6s",
+              color: theme.palette.primary.contrastText,
+              borderRadius: "50%",
+              '&:hover' : {
+            backgroundColor: theme.palette.secondary.light
+        },
+            }}
+          >
+            <IconButton color="inherit">
+              <YouTubeIcon />
             </IconButton>
           </Link>
         </Box>

@@ -4,14 +4,14 @@ import { useEffect, useRef, useState } from "react";
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState({
-    javascript: false,
-    react: false,
-    flutter: false,
+    daVinciResolve: false,
+    adobeLigthroom: false,
+    adobePhotoshop: false,
   });
 
-  const javascriptRef = useRef<HTMLDivElement | null>(null);
-  const reactRef = useRef<HTMLDivElement | null>(null);
-  const flutterRef = useRef<HTMLDivElement | null>(null);
+  const daVinciResolveRef = useRef<HTMLDivElement | null>(null);
+  const adobeLigthroomRef = useRef<HTMLDivElement | null>(null);
+  const adobePhotoshopRef = useRef<HTMLDivElement | null>(null);
 
   const StyledSkills = styled("div")(({ theme }) => ({
     backgroundColor: theme.palette.background.default,
@@ -50,9 +50,9 @@ const Skills = () => {
       };
     };
 
-    observeElement(javascriptRef, "javascript");
-    observeElement(reactRef, "react");
-    observeElement(flutterRef, "flutter");
+    observeElement(daVinciResolveRef, "daVinciResolve");
+    observeElement(adobeLigthroomRef, "adobeLigthroom");
+    observeElement(adobePhotoshopRef, "adobePhotoshop");
   }, []);
 
   return (
@@ -60,31 +60,31 @@ const Skills = () => {
       <Container maxWidth="lg">
         <Box sx={{ textAlign: "center" }}>
           <Typography variant="h2" color="primary" gutterBottom>
-            Skills
+            Habilidades
           </Typography>
           <Grid container spacing={4} marginBottom={3}>
             <Grid item xs={12} md={4}>
               <SkillCard
-                title="JavaScript"
+                title="DaVinci Resolve"
                 delay={0.2}
-                ref={javascriptRef}
-                animationClass={isVisible.javascript ? "grow-animation" : ""}
+                ref={daVinciResolveRef}
+                animationClass={isVisible.daVinciResolve ? "grow-animation" : ""}
               />
             </Grid>
             <Grid item xs={12} md={4}>
               <SkillCard
-                title="React"
+                title="Adobe Lightoom"
                 delay={0.4}
-                ref={reactRef}
-                animationClass={isVisible.javascript ? "grow-animation" : ""}
+                ref={adobeLigthroomRef}
+                animationClass={isVisible.daVinciResolve ? "grow-animation" : ""}
               />
             </Grid>
             <Grid item xs={12} md={4}>
               <SkillCard
-                title="Flutter"
+                title="Adobe Photoshop"
                 delay={0.6}
-                ref={flutterRef}
-                animationClass={isVisible.javascript ? "grow-animation" : ""}
+                ref={adobePhotoshopRef}
+                animationClass={isVisible.daVinciResolve ? "grow-animation" : ""}
               />
             </Grid>
           </Grid>

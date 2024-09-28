@@ -119,7 +119,7 @@ const Hero = () => {
                   >
                     <StyledButton onClick={() => console.log("Download")}>
                       <DownloadIcon />
-                      <Typography>Download CV</Typography>
+                      <Typography>Baixar Currículo</Typography>
                     </StyledButton>
                   </Grid>
                   <Grid

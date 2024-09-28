@@ -60,7 +60,7 @@ const Projects = () => {
             gutterBottom
             marginBottom={5}
           >
-            Projects
+            Meu Trabalho
           </Typography>
           <Grid container spacing={4}>
             <Grid item xs={12} md={4}>

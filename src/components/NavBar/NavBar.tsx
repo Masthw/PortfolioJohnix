@@ -54,13 +54,13 @@ const NavBar = () => {
             }}
           >
             <MenuItem onClick={() => handleScroll("about-section")}>
-              About
+              Sobre Mim
             </MenuItem>
             <MenuItem onClick={() => handleScroll("skills-section")}>
-              Skills
+              Habilidades
             </MenuItem>
             <MenuItem onClick={() => handleScroll("projects-section")}>
-              Projects
+              Meu Trabalho
             </MenuItem>
           </Box>
           <IconButton
@@ -94,7 +94,7 @@ const NavBar = () => {
       >
         <List sx={{ width: "100%", paddingLeft: "10px", paddingRight: "10px" }}>
           <ListItem component="a" onClick={() => handleScroll("about-section")}>
-            <ListItemText primary="About" />
+            <ListItemText primary="Sobre Mim" />
           </ListItem>
           <Divider
             sx={{ backgroundColor: theme.palette.primary.contrastText }}
@@ -103,7 +103,7 @@ const NavBar = () => {
             component="a"
             onClick={() => handleScroll("skills-section")}
           >
-            <ListItemText primary="Skills" />
+            <ListItemText primary="Habilidades" />
           </ListItem>
           <Divider
             sx={{ backgroundColor: theme.palette.primary.contrastText}}
@@ -112,7 +112,7 @@ const NavBar = () => {
             component="a"
             onClick={() => handleScroll("projects-section")}
           >
-            <ListItemText primary="Projects" />
+            <ListItemText primary="Projetos" />
           </ListItem>
         </List>
       </Drawer>
