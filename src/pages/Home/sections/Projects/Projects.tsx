@@ -5,7 +5,7 @@ import Foto1P1 from "../../../../assets/images/projeto1/Foto1.jpg";
 import Foto2P1 from "../../../../assets/images/projeto1/Foto2.png";
 import Foto3P1 from "../../../../assets/images/projeto1/Foto3.png";
 import Slider from "react-slick";
-import CollectionsIcon from '@mui/icons-material/Collections';
+import CollectionsIcon from "@mui/icons-material/Collections";
 import "./styles/stylesProjects.css";
 
 const Projects = () => {
@@ -79,42 +79,54 @@ const Projects = () => {
           </Typography>
           <Grid container spacing={4}>
             <Grid item xs={12} md={4}>
-            <div ref={project1Ref} className={isVisible.project1 ? "popIn project-delay-1" : ""}>
-                <Box sx={{ position: 'relative' }}>
-                    <CollectionsIcon  
-                      sx={{
-                        position: 'absolute',
-                        top: '10px',
-                        right: '10px',
-                        color: 'white',
-                        fontSize: '1rem',
-                        zIndex: 1,
-                        opacity: isVisible.project1 ? 1 : 0,
-                      }}
-                    />
+              <div
+                ref={project1Ref}
+                className={isVisible.project1 ? "popIn project-delay-1" : ""}
+              >
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: { xs: "100%", md: "350px" },
+                    height: { xs: "auto", md: "350px" },                  
+                  }}
+                >
+                  <CollectionsIcon
+                    sx={{
+                      position: "absolute",
+                      top: "10px",
+                      right: "10px",
+                      color: "white",
+                      fontSize: "1rem",
+                      zIndex: 1,
+                      opacity: isVisible.project1 ? 1 : 0,
+                    }}
+                  />
                   <Slider {...settings}>
                     <div>
                       <img
                         src={Foto1P1}
                         alt="Project 1 - Image 1"
-                        className={isVisible.project1 ? "popIn project-delay-1" : "image"}
-                        style={{ width: "100%", height: "100%", borderRadius: "8px" }}
+                        className={`${
+                          isVisible.project1 ? "popIn project-delay-1" : ""
+                        } carousel-image`}
                       />
                     </div>
                     <div>
                       <img
                         src={Foto2P1}
                         alt="Project 1 - Image 2"
-                        className={isVisible.project1 ? "popIn project-delay-1" : "image"}
-                        style={{ width: "100%", borderRadius: "8px" }}
+                        className={`${
+                          isVisible.project1 ? "popIn project-delay-1" : ""
+                        } carousel-image`}
                       />
                     </div>
                     <div>
                       <img
                         src={Foto3P1}
                         alt="Project 1 - Image 3"
-                        className={isVisible.project1 ? "popIn project-delay-1" : "image"}
-                        style={{ width: "100%", borderRadius: "8px" }}
+                        className={`${
+                          isVisible.project1 ? "popIn project-delay-1" : ""
+                        } carousel-image`}
                       />
                     </div>
                   </Slider>
@@ -122,23 +134,25 @@ const Projects = () => {
               </div>
             </Grid>
             <Grid item xs={12} md={4}>
-            <div ref={project2Ref}>
-              <img
-                src={Avatar}
-                alt="Project 2"
-                className={isVisible.project1 ? "popIn project-delay-2" : "image"}
-                style={{ width: "100%", height: "100%", borderRadius: "8px" }}
-              />
+              <div ref={project2Ref}>
+                <img
+                  src={Avatar}
+                  alt="Project 2"
+                  className={
+                    isVisible.project1 ? "popIn project-delay-2" : "image"
+                  }
+                  style={{ width: "100%", height: "100%", borderRadius: "8px" }}
+                />
               </div>
             </Grid>
             <Grid item xs={12} md={4}>
-            <div ref={project3Ref}>
-              <img
-                src={Avatar}
-                alt="Project 3"
-                className={isVisible.project1 ? "popIn project-delay-3" : ""}
-                style={{ width: "100%", borderRadius: "8px" }}
-              />
+              <div ref={project3Ref}>
+                <img
+                  src={Avatar}
+                  alt="Project 3"
+                  className={isVisible.project1 ? "popIn project-delay-3" : ""}
+                  style={{ width: "100%", borderRadius: "8px" }}
+                />
               </div>
             </Grid>
           </Grid>
