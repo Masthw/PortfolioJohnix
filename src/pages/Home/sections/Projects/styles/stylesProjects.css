@@ -9,9 +9,29 @@
   }
 }
 
+
+.slick-slider .slick-dots li button:before {
+  color: white !important; 
+  opacity: 0.5;
+}
+
+.slick-slider .slick-dots li.slick-active button:before {
+  color: white !important;
+  opacity: 1;
+}
+
+
+
 img {
     opacity: 0;
     transform: scale(0.3);
+}
+
+
+.carousel-image {
+  width: 400px; 
+  height: 400px;
+  object-fit: cover;
 }
 
 .popIn {
