@@ -1,5 +1,5 @@
-import { Container, Typography, Box, Grid, styled } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import { Container, Typography, Box, Grid, styled, IconButton } from "@mui/material";
+import { JSXElementConstructor, ReactElement, ReactNode, ReactPortal, useEffect, useRef, useState } from "react";
 import Avatar from "../../../../assets/images/avatar.jpg";
 import Foto1P1 from "../../../../assets/images/projeto1/Foto1.jpg";
 import Foto2P1 from "../../../../assets/images/projeto1/Foto2.png";
@@ -8,6 +8,8 @@ import Foto1P2 from "../../../../assets/images/projeto2/Foto1.jpeg";
 import Foto2P2 from "../../../../assets/images/projeto2/Foto2.jpeg";
 import Slider from "react-slick";
 import CollectionsIcon from "@mui/icons-material/Collections";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import "./styles/stylesProjects.css";
 
 const Projects = () => {
@@ -58,13 +60,64 @@ const Projects = () => {
     };
   }, []);
 
+  const NextArrow = (props: { onClick: any; }) => {
+    const { onClick } = props;
+    return (
+      <IconButton
+        sx={{
+          position: "absolute",
+          bottom: "0px",
+          right: "0px",
+          zIndex: 10,
+          color: "white",
+          transform: "translateY(50%)",
+        }}
+        onClick={onClick}
+      >
+        <ArrowForwardIosIcon sx={{ fontSize: "1.0rem"}}/>
+      </IconButton>
+    );
+  };
+
+  const PrevArrow = (props: { onClick: any; }) => {
+    const { onClick } = props;
+    return (
+      <IconButton
+        sx={{
+          position: "absolute",
+          bottom: "0px",
+          left: "0px",
+          zIndex: 10,
+          color: "white",
+          transform: "translateY(50%)",
+        }}
+        onClick={onClick}
+      >
+        <ArrowBackIosIcon sx={{ fontSize: "1.0rem"}}/>
+      </IconButton>
+    );
+  };
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false,
+    nextArrow: <NextArrow onClick={undefined} />,
+    prevArrow: <PrevArrow onClick={undefined} />,
+    appendDots: (dots: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined) => (
+      <div
+      style={{
+        position: "relative",
+        marginTop: "0px",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <ul style={{ margin: "0px" }}> {dots} </ul>
+    </div>
+  ),
   };
 
   return (
@@ -89,7 +142,8 @@ const Projects = () => {
                   sx={{
                     position: "relative",
                     width: { xs: "100%", md: "350px" },
-                    height: { xs: "auto", md: "350px" },                  
+                    height: { xs: "auto", md: "350px" },
+                    marginBottom: "0.5rem"                  
                   }}
                 >
                   <CollectionsIcon
