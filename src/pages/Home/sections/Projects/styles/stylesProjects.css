@@ -22,10 +22,14 @@
 
 
 
-img {
-    opacity: 0;
-    transform: scale(0.3);
-}
+
+ .modal-image {
+  opacity: 1 ; 
+  transform: noen;
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+ }
 
 
 .carousel-image {

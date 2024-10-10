@@ -1,17 +1,32 @@
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./pages/Home/Home";
-import './global.css';
+import Projects from "./pages/Home/sections/Projects/Projects";
+import ProjectDetail from "./pages/Home/sections/Projects/ProjectDetail";
+import "./global.css";
 import Footer from "./components/Footer/Footer";
 
-
 const App = () => {
+
+  const location = useLocation();
+
   return (
-  <>
-  <NavBar />
-  <Home />
-  <Footer />
-  </>
-  )
+    <>
+      {location.pathname !== "/project/1" && location.pathname !== "/project/2" && <NavBar />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/project/:projectId" element={<ProjectDetail />} />
+      </Routes>
+      <Footer />
+    </>
+  );
 };
 
-export default App;
+const AppWrapper = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWrapper;

@@ -1,5 +1,20 @@
-import { Container, Typography, Box, Grid, styled, IconButton } from "@mui/material";
-import { JSXElementConstructor, ReactElement, ReactNode, ReactPortal, useEffect, useRef, useState } from "react";
+import {
+  Container,
+  Typography,
+  Box,
+  Grid,
+  styled,
+  IconButton,
+} from "@mui/material";
+import {
+  JSXElementConstructor,
+  ReactElement,
+  ReactNode,
+  ReactPortal,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import Avatar from "../../../../assets/images/avatar.jpg";
 import Foto1P1 from "../../../../assets/images/projeto1/Foto1.jpg";
 import Foto2P1 from "../../../../assets/images/projeto1/Foto2.png";
@@ -18,6 +33,10 @@ const Projects = () => {
     project2: false,
     project3: false,
   });
+
+ 
+  const imagesProject1 = [Foto1P1, Foto2P1, Foto3P1];
+  const imagesProject2 = [Foto1P2, Foto2P2];
 
   const project1Ref = useRef<HTMLDivElement | null>(null);
   const project2Ref = useRef<HTMLDivElement | null>(null);
@@ -60,7 +79,7 @@ const Projects = () => {
     };
   }, []);
 
-  const NextArrow = (props: { onClick: any; }) => {
+  const NextArrow = (props: { onClick: () => void }) => {
     const { onClick } = props;
     return (
       <IconButton
@@ -74,12 +93,12 @@ const Projects = () => {
         }}
         onClick={onClick}
       >
-        <ArrowForwardIosIcon sx={{ fontSize: "1.0rem"}}/>
+        <ArrowForwardIosIcon sx={{ fontSize: "1.0rem" }} />
       </IconButton>
     );
   };
 
-  const PrevArrow = (props: { onClick: any; }) => {
+  const PrevArrow = (props: { onClick: () => void }) => {
     const { onClick } = props;
     return (
       <IconButton
@@ -93,7 +112,7 @@ const Projects = () => {
         }}
         onClick={onClick}
       >
-        <ArrowBackIosIcon sx={{ fontSize: "1.0rem"}}/>
+        <ArrowBackIosIcon sx={{ fontSize: "1.0rem" }} />
       </IconButton>
     );
   };
@@ -104,20 +123,34 @@ const Projects = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <NextArrow onClick={undefined} />,
-    prevArrow: <PrevArrow onClick={undefined} />,
-    appendDots: (dots: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined) => (
+    nextArrow: <NextArrow onClick={() => {}} />,
+    prevArrow: <PrevArrow onClick={() => {}} />,
+    appendDots: (
+      dots:
+        | string
+        | number
+        | boolean
+        | ReactElement<any, string | JSXElementConstructor<any>>
+        | Iterable<ReactNode>
+        | ReactPortal
+        | null
+        | undefined
+    ) => (
       <div
-      style={{
-        position: "relative",
-        marginTop: "0px",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      <ul style={{ margin: "0px" }}> {dots} </ul>
-    </div>
-  ),
+        style={{
+          position: "relative",
+          marginTop: "0px",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <ul style={{ margin: "0px" }}> {dots} </ul>
+      </div>
+    ),
+  };
+
+  const handleProjectClick = (projectId: number) => {
+    window.location.href = `/project/${projectId}`; 
   };
 
   return (
@@ -143,7 +176,7 @@ const Projects = () => {
                     position: "relative",
                     width: { xs: "100%", md: "350px" },
                     height: { xs: "auto", md: "350px" },
-                    marginBottom: "0.5rem"                  
+                    marginBottom: "0.5rem",
                   }}
                 >
                   <CollectionsIcon
@@ -158,47 +191,36 @@ const Projects = () => {
                     }}
                   />
                   <Slider {...settings}>
-                    <div>
-                      <img
-                        src={Foto1P1}
-                        alt="Project 1 - Image 1"
-                        className={`${
-                          isVisible.project1 ? "popIn project-delay-1" : ""
-                        } carousel-image`}
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src={Foto2P1}
-                        alt="Project 1 - Image 2"
-                        className={`${
-                          isVisible.project1 ? "popIn project-delay-1" : ""
-                        } carousel-image`}
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src={Foto3P1}
-                        alt="Project 1 - Image 3"
-                        className={`${
-                          isVisible.project1 ? "popIn project-delay-1" : ""
-                        } carousel-image`}
-                      />
-                    </div>
+                    {imagesProject1.map((image, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleProjectClick(1)}
+                      >
+                        <img
+                          src={image}
+                          alt={`Project 1 - Image ${index + 1}`}
+                          className={`${
+                            isVisible.project1 ? "popIn project-delay-1" : ""
+                          } carousel-image`}
+                        />
+                      </div>
+                    ))}
                   </Slider>
                 </Box>
               </div>
             </Grid>
             <Grid item xs={12} md={4}>
-              <div ref={project2Ref}
-               className={
-                isVisible.project1 ? "popIn project-delay-2" : "image"
-              }>
+              <div
+                ref={project2Ref}
+                className={
+                  isVisible.project1 ? "popIn project-delay-2" : "image"
+                }
+              >
                 <Box
                   sx={{
                     position: "relative",
                     width: { xs: "100%", md: "350px" },
-                    height: { xs: "auto", md: "350px" },                  
+                    height: { xs: "auto", md: "350px" },
                   }}
                 >
                   <CollectionsIcon
@@ -213,24 +235,21 @@ const Projects = () => {
                     }}
                   />
                   <Slider {...settings}>
-                    <div>
-                      <img
-                        src={Foto1P2}
-                        alt="Project 2 - Image 1"
-                        className={`${
-                          isVisible.project1 ? "popIn project-delay-2" : ""
-                        } carousel-image`}
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src={Foto2P2}
-                        alt="Project 2 - Image 2"
-                        className={`${
-                          isVisible.project1 ? "popIn project-delay-2" : ""
-                        } carousel-image`}
-                      />
-                    </div>
+                    {imagesProject2.map((image, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleProjectClick(2)}
+                      
+                      >
+                        <img
+                          src={image}
+                          alt={`Project 2 - Image ${index + 1}`}
+                          className={`${
+                            isVisible.project1 ? "popIn project-delay-2" : ""
+                          } carousel-image`}
+                        />
+                      </div>
+                    ))}
                   </Slider>
                 </Box>
               </div>
