@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <>
-      {location.pathname !== "/project/1" && location.pathname !== "/project/2" && <NavBar />}
+      {!location.pathname.startsWith("/project") && <NavBar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />

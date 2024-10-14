@@ -15,12 +15,15 @@ import {
   useRef,
   useState,
 } from "react";
-import Avatar from "../../../../assets/images/avatar.jpg";
 import Foto1P1 from "../../../../assets/images/projeto1/Foto1.jpg";
-import Foto2P1 from "../../../../assets/images/projeto1/Foto2.png";
-import Foto3P1 from "../../../../assets/images/projeto1/Foto3.png";
-import Foto1P2 from "../../../../assets/images/projeto2/Foto1.jpeg";
-import Foto2P2 from "../../../../assets/images/projeto2/Foto2.jpeg";
+import Foto2P1 from "../../../../assets/images/projeto1/Foto2.jpg";
+import Foto3P1 from "../../../../assets/images/projeto1/Foto3.jpg";
+import Foto1P2 from "../../../../assets/images/projeto2/Foto1.jpg";
+import Foto2P2 from "../../../../assets/images/projeto2/Foto2.jpg";
+import Foto1P3 from "../../../../assets/images/projeto3/Foto1.jpg";
+import Foto2P3 from "../../../../assets/images/projeto3/Foto2.jpg";
+import Foto3P3 from "../../../../assets/images/projeto3/Foto3.jpg";
+import Foto4P3 from "../../../../assets/images/projeto3/Foto4.jpg";
 import Slider from "react-slick";
 import CollectionsIcon from "@mui/icons-material/Collections";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -37,6 +40,7 @@ const Projects = () => {
  
   const imagesProject1 = [Foto1P1, Foto2P1, Foto3P1];
   const imagesProject2 = [Foto1P2, Foto2P2];
+  const imagesProject3 = [Foto1P3, Foto2P3, Foto3P3, Foto4P3];
 
   const project1Ref = useRef<HTMLDivElement | null>(null);
   const project2Ref = useRef<HTMLDivElement | null>(null);
@@ -255,13 +259,48 @@ const Projects = () => {
               </div>
             </Grid>
             <Grid item xs={12} md={4}>
-              <div ref={project3Ref}>
-                <img
-                  src={Avatar}
-                  alt="Project 3"
-                  className={isVisible.project1 ? "popIn project-delay-3" : ""}
-                  style={{ width: "100%", borderRadius: "8px" }}
-                />
+            <div
+                ref={project3Ref}
+                className={
+                  isVisible.project1 ? "popIn project-delay-3" : "image"
+                }
+              >
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: { xs: "100%", md: "350px" },
+                    height: { xs: "auto", md: "350px" },
+                  }}
+                >
+                  <CollectionsIcon
+                    sx={{
+                      position: "absolute",
+                      top: "10px",
+                      right: "10px",
+                      color: "white",
+                      fontSize: "1rem",
+                      zIndex: 1,
+                      opacity: isVisible.project1 ? 1 : 0,
+                    }}
+                  />
+                  <Slider {...settings}>
+                    {imagesProject3.map((image, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleProjectClick(3)}
+                      
+                      >
+                        <img
+                          src={image}
+                          alt={`Project 3 - Image ${index + 1}`}
+                          className={`${
+                            isVisible.project1 ? "popIn project-delay-3" : ""
+                          } carousel-image`}
+                        />
+                      </div>
+                    ))}
+                  </Slider>
+                </Box>
               </div>
             </Grid>
           </Grid>

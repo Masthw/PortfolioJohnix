@@ -5,10 +5,21 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 import Foto1P1 from "../../../../assets/images/projeto1/Foto1.jpg";
-import Foto2P1 from "../../../../assets/images/projeto1/Foto2.png";
-import Foto3P1 from "../../../../assets/images/projeto1/Foto3.png";
-import Foto1P2 from "../../../../assets/images/projeto2/Foto1.jpeg";
-import Foto2P2 from "../../../../assets/images/projeto2/Foto2.jpeg";
+import Foto2P1 from "../../../../assets/images/projeto1/Foto2.jpg";
+import Foto3P1 from "../../../../assets/images/projeto1/Foto3.jpg";
+import Foto1P2 from "../../../../assets/images/projeto2/Foto1.jpg";
+import Foto2P2 from "../../../../assets/images/projeto2/Foto2.jpg";
+import Foto1P3 from "../../../../assets/images/projeto3/Foto1.jpg";
+import Foto2P3 from "../../../../assets/images/projeto3/Foto2.jpg";
+import Foto3P3 from "../../../../assets/images/projeto3/Foto3.jpg";
+import Foto4P3 from "../../../../assets/images/projeto3/Foto4.jpg";
+
+
+const projectImages: { [key: string]: string[]} = {
+  "1": [Foto1P1, Foto2P1, Foto3P1],
+  "2": [Foto1P2, Foto2P2],
+  "3": [Foto1P3, Foto2P3, Foto3P3, Foto4P3],
+}
 
 const StyledProjects = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
@@ -17,10 +28,10 @@ const StyledProjects = styled("div")(({ theme }) => ({
 }));
 
 const ProjectDetail = () => {
-  const { projectId } = useParams();
+  const { projectId } = useParams<{projectId: string}>();
   const navigate = useNavigate();
 
-  const images = projectId === "1" ? [Foto1P1, Foto2P1, Foto3P1] : [Foto1P2, Foto2P2];
+  const images = projectId && projectImages[projectId] ? projectImages[projectId] : [];
 
   const NextArrow = (props: { onClick: () => void }) => {
     const { onClick } = props;
