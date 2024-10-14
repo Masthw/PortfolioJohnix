@@ -25,7 +25,7 @@
 
  .modal-image {
   opacity: 1 ; 
-  transform: noen;
+  transform: none;
   width: 100%;
   max-height: 80vh;
   object-fit: contain;
@@ -33,8 +33,8 @@
 
 
 .carousel-image {
-  width: 400px; 
-  height: 400px;
+  width: 350px; 
+  height: 350px;
   object-fit: cover;
   cursor: pointer;
 }
@@ -53,4 +53,24 @@
 
 .project-delay-3 {
   animation-delay: 0.6s;
+}
+
+.project-delay-4 {
+  animation-delay: 1.2s;
+}
+
+.project-delay-5 {
+  animation-delay: 1s;
+}
+
+.project-delay-6 {
+  animation-delay: 0.8s;
+}
+
+.project-delay-7 {
+  animation-delay: 1.4s;
+}
+
+.project-delay-8 {
+  animation-delay: 1.6s;
 }
