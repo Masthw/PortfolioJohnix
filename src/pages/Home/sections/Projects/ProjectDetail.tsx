@@ -33,10 +33,37 @@ import Foto2P8 from "../../../../assets/images/projeto8/Foto2.jpg";
 import Foto3P8 from "../../../../assets/images/projeto8/Foto3.jpg";
 import Foto4P8 from "../../../../assets/images/projeto8/Foto4.jpg";
 import Foto5P8 from "../../../../assets/images/projeto8/Foto5.jpg";
-import Foto6P8 from "../../../../assets/images/projeto8/Foto6.jpg";
-import Foto7P8 from "../../../../assets/images/projeto8/Foto7.jpg";
-import Foto8P8 from "../../../../assets/images/projeto8/Foto8.jpg";
-import Foto9P8 from "../../../../assets/images/projeto8/Foto9.jpg";
+import Foto1P9 from "../../../../assets/images/projeto9/Foto1.jpg";
+import Foto2P9 from "../../../../assets/images/projeto9/Foto2.jpg";
+import Foto3P9 from "../../../../assets/images/projeto9/Foto3.jpg";
+import Foto4P9 from "../../../../assets/images/projeto9/Foto4.jpg";
+import Foto1P10 from "../../../../assets/images/projeto10/Foto1.jpg";
+import Foto2P10 from "../../../../assets/images/projeto10/Foto2.jpg";
+import Foto3P10 from "../../../../assets/images/projeto10/Foto3.jpg";
+import Foto4P10 from "../../../../assets/images/projeto10/Foto4.jpg";
+import Foto5P10 from "../../../../assets/images/projeto10/Foto5.jpg";
+import Foto6P10 from "../../../../assets/images/projeto10/Foto6.jpg";
+import Foto7P10 from "../../../../assets/images/projeto10/Foto7.jpg";
+import Foto1P11 from "../../../../assets/images/projeto11/Foto1.jpg";
+import Foto2P11 from "../../../../assets/images/projeto11/Foto2.jpg";
+import Foto3P11 from "../../../../assets/images/projeto11/Foto3.jpg";
+import Foto4P11 from "../../../../assets/images/projeto11/Foto4.jpg";
+import Foto5P11 from "../../../../assets/images/projeto11/Foto5.jpg";
+import Foto6P11 from "../../../../assets/images/projeto11/Foto6.jpg";
+import Foto7P11 from "../../../../assets/images/projeto11/Foto7.jpg";
+import Foto8P11 from "../../../../assets/images/projeto11/Foto8.jpg";
+import Foto9P11 from "../../../../assets/images/projeto11/Foto9.jpg";
+import Foto10P11 from "../../../../assets/images/projeto11/Foto10.jpg";
+import Foto1P12 from "../../../../assets/images/projeto12/Foto1.jpg";
+import Foto2P12 from "../../../../assets/images/projeto12/Foto2.jpg";
+import Foto3P12 from "../../../../assets/images/projeto12/Foto3.jpg";
+import Foto4P12 from "../../../../assets/images/projeto12/Foto4.jpg";
+import Foto5P12 from "../../../../assets/images/projeto12/Foto5.jpg";
+import Foto6P12 from "../../../../assets/images/projeto12/Foto6.jpg";
+import Foto7P12 from "../../../../assets/images/projeto12/Foto7.jpg";
+import Foto8P12 from "../../../../assets/images/projeto12/Foto8.jpg";
+import Foto9P12 from "../../../../assets/images/projeto12/Foto9.jpg";
+import Foto10P12 from "../../../../assets/images/projeto12/Foto10.jpg";
 
 const projectImages: { [key: string]: string[]} = {
   "1": [Foto1P1, Foto2P1, Foto3P1],
@@ -46,8 +73,11 @@ const projectImages: { [key: string]: string[]} = {
   "5": [Foto1P5],
   "6": [Foto1P6, Foto2P6, Foto3P6, Foto4P6, Foto5P6],
   "7": [Foto1P7, Foto2P7, Foto3P7, Foto4P7, Foto5P7, Foto6P7, Foto7P7],
-  "8": [Foto1P8, Foto2P8, Foto3P8, Foto4P8, Foto5P8, Foto6P8, Foto7P8, Foto8P8, Foto9P8],
-  
+  "8": [Foto1P8, Foto2P8, Foto3P8, Foto4P8, Foto5P8],
+  "9": [Foto1P9, Foto2P9, Foto3P9, Foto4P9],
+  "10": [Foto1P10, Foto2P10, Foto3P10, Foto4P10, Foto5P10, Foto6P10, Foto7P10],
+  "11": [Foto1P11, Foto2P11, Foto3P11, Foto4P11, Foto5P11, Foto6P11, Foto7P11, Foto8P11, Foto9P11, Foto10P11],
+  "12": [Foto1P12, Foto2P12, Foto3P12, Foto4P12, Foto5P12, Foto6P12, Foto7P12, Foto8P12, Foto9P12, Foto10P12],
 }
 
 const StyledProjects = styled("div")(({ theme }) => ({

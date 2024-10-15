@@ -39,6 +39,14 @@
   cursor: pointer;
 }
 
+.image-standalone {
+  max-width: 100%;
+  height: 350px; 
+  object-fit: cover;
+  display: block;
+  margin: 0 auto; 
+}
+
 .popIn {
   animation: popIn 1.2s ease-out forwards;
 }
@@ -73,4 +81,19 @@
 
 .project-delay-8 {
   animation-delay: 1.6s;
+}
+
+.project-delay-9 {
+  animation-delay: 1.8s;
+}
+
+.project-delay-10 {
+  animation-delay: 2.4s;
+}
+
+.project-delay-11 {
+  animation-delay: 2.2s;
+}
+.project-delay-12 {
+  animation-delay: 2.0s;
 }
