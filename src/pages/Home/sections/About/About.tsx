@@ -3,11 +3,14 @@ import InfoBox from "./InfoBox";
 import SchoolIcon from "@mui/icons-material/School";
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import { useEffect, useRef, useState } from "react";
-import "./styles/animationsAbout.css";
 
 const About = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const aboutRef = useRef(null);
+  const [isVisible, setIsVisible] = useState({
+    education: false,
+    experience: false,
+  });
+  const educationRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
 
   const StyledAbout = styled("div")(({ theme }) => ({
     backgroundColor: theme.palette.primary.contrastText,
@@ -22,32 +25,38 @@ const About = () => {
     },
   }));
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        root: null,
-        threshold: 0.9,
-      }
-    );
+ useEffect(() => {
+    const observeElement = (
+      ref: React.RefObject<HTMLDivElement>,
+      key: keyof typeof isVisible
+    ) => {
+      const observerCallback = (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible((prev) => ({ ...prev, [key]: true }));
+          }
+        });
+      };
 
-    if (aboutRef.current) {
-      observer.observe(aboutRef.current);
-    }
-    return () => {
-      if (aboutRef.current) observer.unobserve(aboutRef.current);
+      const observer = new IntersectionObserver(observerCallback, {
+        root: null,
+        threshold: 0.5,
+      });
+
+      if (ref.current) observer.observe(ref.current);
+
+      return () => {
+        if (ref.current) observer.unobserve(ref.current);
+      };
     };
+
+    observeElement(educationRef, "education");
+    observeElement(experienceRef, "experience");
   }, []);
 
   return (
     <>
-      <StyledAbout ref={aboutRef}>
+      <StyledAbout>
         <Container maxWidth="lg">
           <Box sx={{ textAlign: "center" }}>
             <Typography variant="h2" color="primary" gutterBottom>
@@ -56,18 +65,20 @@ const About = () => {
             <Grid container spacing={4} sx={{ mt: 4 }}>
               <Grid item xs={12} md={6}>
                 <InfoBox
+                ref={educationRef}
                   icon={SchoolIcon}
                   title="Educação"
                   description={"Produção Audiovisual - FSG"}
-                  animationClass={isVisible ? "slide-left" : ""}
+                  animationClass={isVisible.education ? "slide-left" : ""}
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <InfoBox
+                ref={experienceRef}
                   icon={WorkspacePremiumIcon}
                   title="Experiência"
                   description="Criação e edição de vídeos"
-                  animationClass={isVisible ? "slide-right" : ""}
+                  animationClass={isVisible.experience ? "slide-right" : ""}
                 />
               </Grid>
             </Grid>
