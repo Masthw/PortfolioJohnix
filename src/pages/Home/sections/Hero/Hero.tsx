@@ -109,13 +109,14 @@ const Hero = () => {
                   justifyContent="center"
                   spacing={3}
                   pt={3}
+                  marginBottom="25px"
                 >
                   <Grid
                     item
                     xs={12}
                     md={4}
                     display="flex"
-                    justifyContent="center"
+                    justifyContent="center"   
                   >
                     <StyledButton onClick={() => console.log("Download")}>
                       <DownloadIcon />
@@ -128,7 +129,6 @@ const Hero = () => {
                     md={4}
                     display="flex"
                     justifyContent="center"
-                    marginBottom="25px"
                   >
                     <ContactMe />
                   </Grid>
