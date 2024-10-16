@@ -15,7 +15,7 @@ const Hero = () => {
 
   const StyledHero = styled("div")(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
-    height: "100vh",
+    minHeight: "100vh",
     display: "flex",
     alignItems: "center",
     [theme.breakpoints.up("xs")]: {
@@ -128,6 +128,7 @@ const Hero = () => {
                     md={4}
                     display="flex"
                     justifyContent="center"
+                    marginBottom="25px"
                   >
                     <ContactMe />
                   </Grid>
